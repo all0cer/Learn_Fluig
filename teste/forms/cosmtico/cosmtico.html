@@ -1,0 +1,148 @@
+<html>
+<head>
+	<link type="text/css" rel="stylesheet" href="/style-guide/css/fluig-style-guide.min.css"/>
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/mustache/mustache-min.js"></script>
+	<script type="text/javascript" src="/style-guide/js/fluig-style-guide.min.js" charset="utf-8"></script>
+	<script type="text/javascript" src="main.js"></script>
+</head>
+<body>
+<div class="fluig-style-guide">
+<form name="form" role="form">
+	<div class="panel panel-info">
+		<div class="panel-heading">
+			<h3 class="panel-title">Dados de cadastro</h3>
+		</div>
+		<div class="panel-body">
+			<div class="row">
+				<div class="form-group col-md-4">
+					<label for="exemploInserirNome">Nome</label>
+					<input type="text" class="form-control" id="InserirNome" name="inserirNome">
+				</div>
+				<div class="form-group col-md-4">
+					<label for="exemploInserirEmail">Email</label>
+					<input type="email" class="form-control" id="InserirEmail" name="inserirEmail">
+				</div>
+				<div class="form-group col-md-4">
+					<label for="exemploInserirSenha">Senha</label>
+					<input type="password" class="form-control" id="InserirSenha" name="inserirSenha">
+				</div>
+				<div class="form-group col-md-4">
+					<label for="exemploInserirResponsavel">Responsavel</label>
+					<input
+							type="zoom"
+							id = "c7_total"
+							name="c7_total"
+							data-zoom="{
+								'displayKey':'colleagueName',
+								'datasetId':'colleagueGroup',
+								'maximumSelectionLength':'2',
+								'placeholder':'Escolha o usuário',
+								'fields':[
+									{
+									'field':'colleagueId',
+									'label':'ID'
+									},{
+									'field':'colleagueName',
+									'label':'Nome',
+									'standard':'true'
+									},{
+									'field':'login',
+									'label':'Login'
+									}
+								]
+							}"
+						/>
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group col-md-2">
+					<label for="exemploInserirCPF">CPF</label>
+					<input type="text" class="form-control" id="InserirCPF" name="inserirCPF" mask="000.000.000-00">
+				</div>
+				<div class="form-group col-md-2">
+					<label for="exemploInserirDataNasc">Data de Nascimento</label>
+					<input type="date" class="form-control" id="InserirDataNasc" name="inserirDataNasc">
+				</div>
+			</div>
+			
+			<div class="panel panel-info">
+				<div class="panel-heading">
+					<h3 class="panel-title">Tipo de Ponto</h3>
+				</div>
+				<div class="panel-body">
+					<div class="row">
+						<div class="form-group col-md-6">
+							<div class="radio" id="escolhatipo">
+								<label><input type="radio"  name="Tipo" value="comercio"> Comércio</label>
+								<label><input type="radio"  name="Tipo" value="hospedagem"> Hospedagem</label>
+								<label><input type="radio"  name="Tipo" value="pontoturistico"> Ponto Turistico</label>
+								<label><input type="radio"  name="Tipo" value="evento"> Evento</label>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			
+		</div>
+	</div>
+			
+	
+	
+
+
+	<!-- DIV'S PARA CADA TIPO -->
+	<div class="row" id="conteudoComercio" style="display:none">
+			<div class="form-group col-md-2">
+				<label for="exemploInserirHoraAbrir">Abre</label>
+				<input type="time" class="form-control" id="InserirHoraAbertura" name="inserirHoraAbertura">
+			</div>
+			<div class="form-group col-md-2">
+				<label for="exemploInserirHoraAbrir">Fecha</label>
+				<input type="time" class="form-control" id="InserirHoraFechamento" name="inserirHoraFechamento">
+			</div>
+		<div class="row">
+			<div class="form-group col-md-2">
+				<div class="checkbox" id="diasComercio">
+					<label><input type="checkbox" name="DiaSegunda" value="DiaSegunda"> Seg</label>
+					<label><input type="checkbox" name="DiaTerca" value="DiaTerca"> Ter</label>
+					<label><input type="checkbox" name="DiaQuarta" value="DiaQuarta"> Qua</label>
+					<label><input type="checkbox" name="DiaQuinta" value="DiaQuinta"> Qui</label>
+					<label><input type="checkbox" name="DiaSexta" value="DiaSexta"> Sex</label>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="row" id="conteudoHospedagem" style="display:none">
+		<div class="form-group col-md-2">
+			<label>Camas de solteiro <input type="number" name="qtdCamaSolteiro" value="qtdCamaSolteiro"></label>
+			<label>Camas de casal <input type="number" name="qtdCamaCasal" value="qtdCamaCasal"></label>
+			<label>Aceita animal <input type="radio" name="aceitaAnimal" value="aceitaAnimal"></label>
+		</div>
+	</div>
+
+
+	<div class="row" id="conteudoPontoturistico" style="display:none">
+		<div class="form-group col-md-4">
+			<label>Valor de entrada <input type="number" name="valorEntrada" value="valorEntrada"></label>
+		</div>
+	</div>
+
+
+	<div class="row" id="conteudoEvento" style="display:none">
+		<div class="form-group col-md-2">
+			<label>Data do evento <input type="date" name="dataEvento" value="dataEvento"></label>
+			<label>Horário início do evento <input type="time" name="horaEvento" value="horaEvento"></label>
+		</div>
+	</div>
+
+
+
+</form>
+</div>
+</body>
+</html>
